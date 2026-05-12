@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDETA SECRETA - Audioguía</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                        url('fondo-edeta.jpg') center/cover no-repeat fixed;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.55);
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            background-color: #8c6b4f;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        button:hover {
+            background-color: #6f533d;
+            transform: scale(1.03);
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>EDETA SECRETA</h1>
+
+        <p>
+            Selecciona tu idioma para comenzar la experiencia y escuchar la audioguía.
+        </p>
+
+        <button onclick="playAudio('audio-es.mp3')">🇪🇸 Español</button>
+        <button onclick="playAudio('audio-en.mp3')">🇬🇧 English</button>
+        <button onclick="playAudio('audio-fr.mp3')">🇫🇷 Français</button>
+
+        <audio id="player" controls></audio>
+
+        <div class="footer">
+            Proyecto desarrollado por Proyectos Edeta
+        </div>
+    </div>
+
+    <script>
+        function playAudio(file) {
+            const player = document.getElementById('player');
+            player.src = file;
+            player.play();
+        }
+    </script>
+
+</body>
+
+</html>
